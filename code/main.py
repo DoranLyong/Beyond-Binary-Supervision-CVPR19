@@ -172,6 +172,8 @@ def main():
         model = PoseModel_Resnet18(embedding_size=args.embedding_size, pretrained=True, is_norm=args.is_norm)
     elif args.model == 'resnet18':
         model = PoseModel_Resnet18(embedding_size=args.embedding_size, pretrained=True, is_norm=args.is_norm)
+
+    # Tensor into CUDA 
     model = model.to(device)
 
     if args.data_parallel:
